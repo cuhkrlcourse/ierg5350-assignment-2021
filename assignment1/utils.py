@@ -1,5 +1,5 @@
 import time
-import numpy as np
+
 from IPython.display import clear_output
 from gym.envs.registration import register
 
@@ -59,11 +59,12 @@ def test_random_policy(policy, env):
             "We encourage you to investigate this issue."
         )
 
+
 # We register a non-slippery version of FrozenLake environment.
 register(
     id='FrozenLakeNotSlippery-v0',
     entry_point='gym.envs.toy_text:FrozenLakeEnv',
-    kwargs={'map_name' : '4x4', 'is_slippery': False},
+    kwargs={'map_name': '4x4', 'is_slippery': False},
     max_episode_steps=200,
-    reward_threshold=0.78, # optimum = .8196
+    reward_threshold=0.78,  # optimum = .8196
 )

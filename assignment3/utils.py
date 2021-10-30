@@ -1,9 +1,14 @@
 import copy
+import sys
 import time
+import traceback
 from collections import deque
 
 import gym
 import numpy as np
+
+traceback
+sys
 
 
 def wait(sleep=0.2):

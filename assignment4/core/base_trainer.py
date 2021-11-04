@@ -89,32 +89,26 @@ class BaseTrainer:
     def compute_action(self, obs, deterministic=False):
         obs = self.process_obs(obs)
 
-        # [TODO] Get the actions and the log probability of the action from the output of neural network.
-        #  Hint: Use proper torch distribution to help you
-        actions, action_log_probs = None, None
-
-        if self.discrete:  # Please use categorical distribution.
+        if self.discrete:  # We use categorical distribution.
             logits, values = self.model(obs)
-            pass
             dist = torch.distributions.Categorical(logits=logits)
             if deterministic:
                 actions = dist.probs.argmax(dim=1, keepdim=True)
             else:
                 actions = dist.sample()
             action_log_probs = dist.log_prob(actions.view(-1))
-
             actions = actions.view(-1, 1)  # In discrete case only return the chosen action.
 
-        else:  # Please use normal distribution.
+        else:
+            # [TODO] Get the actions and the log probability of the action from the output of neural network.
+            # Please use normal distribution.
             means, log_std, values = self.model(obs)
             pass
-            action_std = torch.exp(log_std)
-            dist = torch.distributions.Normal(means, action_std)
             if deterministic:  # Use the means as the action
-                actions = means
+                actions = None
             else:
-                actions = dist.sample()
-            action_log_probs = dist.log_prob(actions).sum(axis=1)
+                actions = None
+            action_log_probs = None
 
             actions = actions.view(-1, self.num_actions)
 

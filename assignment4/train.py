@@ -168,9 +168,6 @@ def train(args):
                 actions = None
                 action_log_prob = None
                 pass
-                with torch.no_grad():
-                    values, actions, action_log_prob = \
-                        trainer.compute_action(trainer.rollouts.observations[index])
 
                 # actions is a torch tensor, so we need to turn it into numpy array.
                 cpu_actions = actions.cpu().numpy()

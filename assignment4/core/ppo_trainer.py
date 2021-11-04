@@ -96,26 +96,11 @@ class PPOTrainer(BaseTrainer):
         policy_loss = None
         ratio = None  # The importance sampling factor, the ratio of new policy prob over old policy prob
         pass
-        ratio = torch.exp(action_log_probs - old_action_log_probs_batch)
-        surr1 = ratio * adv_targ
-        surr2 = torch.clamp(ratio, 1.0 - self.clip_param, 1.0 + self.clip_param) * adv_targ
-        policy_loss = -torch.min(surr1, surr2)
-        policy_loss_mean = policy_loss.mean()
+
 
         # [TODO] Implement value loss
-        # value_loss = None
-        # pass
-        # value_loss = F.mse_loss(input=values, target=return_batch)
-        # ===========================================================
-        vf_clip_param = 10.0
-        value_pred_clipped = value_preds_batch + (values - value_preds_batch).clamp(-vf_clip_param, vf_clip_param)
-        value_losses = (values - return_batch).pow(2)
-        value_losses_clipped = (value_pred_clipped - return_batch).pow(2)
-        value_loss = 0.5 * torch.max(value_losses, value_losses_clipped)
-        value_loss_mean = value_loss.mean()
-
-        # else:
-        # value_loss = 0.5 * (return_batch - values).pow(2).mean()
+        value_loss = None
+        pass
 
         # This is the total loss
         loss = policy_loss + self.config.value_loss_weight * value_loss - self.config.entropy_loss_weight * dist_entropy

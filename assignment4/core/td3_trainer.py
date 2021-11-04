@@ -152,33 +152,14 @@ class TD3Trainer:
 
         # [TODO] Following the TODOs below to implement critic loss
         with torch.no_grad():
-            # Select action according to policy and add clipped noise
-            # [TODO]
-            next_action = None
-            pass
-            noise = (
-                    torch.randn_like(action) * self.policy_noise
-            ).clamp(-self.noise_clip, self.noise_clip)
-
-            next_action = (
-                    self.actor_target(next_state) + noise
-            ).clamp(-self.max_action, self.max_action)
-
             # Compute the target Q value
-            # [TODO]
             target_Q = None
             pass
-            target_Q1, target_Q2 = self.critic_target(next_state, next_action)
-            target_Q = torch.min(target_Q1, target_Q2)
-            target_Q = reward + not_done * self.discount * target_Q
 
         # Get current Q estimates
         current_Q1, current_Q2 = self.critic(state, action)
 
         # Compute critic loss
-        # [TODO]
-        critic_loss = None
-        pass
         critic_loss = F.mse_loss(current_Q1, target_Q) + F.mse_loss(current_Q2, target_Q)
 
         # Optimize the critic
@@ -189,10 +170,9 @@ class TD3Trainer:
         # Delayed policy updates
         if self.total_it % self.policy_freq == 0:
 
-            # Compute actor loss
+            # [TODO] Compute actor loss
             actor_loss = None
             pass
-            actor_loss = -self.critic.Q1(state, self.actor(state)).mean()
 
             # Optimize the actor
             self.actor_optimizer.zero_grad()

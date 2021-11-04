@@ -61,7 +61,6 @@ class A2CRolloutStorage:
 
             # self.returns[step] = None
             pass
-            self.returns[step] = self.returns[step + 1] * gamma * self.masks[step + 1] + self.rewards[step]
 
 
 class PPORolloutStorage(A2CRolloutStorage):
@@ -108,13 +107,9 @@ class PPORolloutStorage(A2CRolloutStorage):
 
                 # self.returns[step] = None
                 pass
-                delta = (
-                        self.rewards[step] + gamma * self.value_preds[step + 1] * self.masks[step + 1]
-                        - self.value_preds[step]
-                )
-                gae = delta + gamma * self.gae_lambda * self.masks[step + 1] * gae
-                self.returns[step] = gae + self.value_preds[step]
+
         else:
+            # We don't test this case
             raise NotImplementedError()
 
 

@@ -2,6 +2,10 @@
 
 **Due: 11:59 pm, November 26 (Friday Night), 2021**
 
+Changelog:
+```diff
++ Nov 6: Remove wrong assertions in BaseTrainer test. dist_entropy should be a tensor with single entry.
+```
 
 
 Welcome to assignment 4 of our RL course! In this assignment, we will implement a RL system that allows us to train and evaluate RL agents formally and efficiently. In this assigment, we will **train agent to drive car**!

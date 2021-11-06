@@ -316,10 +316,8 @@ def test_base_trainer():
     assert actions.shape == (1, 1), actions.shape
     assert values.shape == (1, 1), values.shape
     assert action_log_probs.shape == (1, 1), action_log_probs.shape
-    assert dist_entropy.shape == ()
     assert (values == new_values).all()
     assert (action_log_probs == new_action_log_probs).all()
-    assert dist_entropy.shape == ()
 
     # Input multiple observations
     values, actions, action_log_probs = trainer.compute_action(obs, deterministic=False)
@@ -327,10 +325,8 @@ def test_base_trainer():
     assert actions.shape == (3, 1), actions.shape
     assert values.shape == (3, 1), values.shape
     assert action_log_probs.shape == (3, 1), action_log_probs.shape
-    assert dist_entropy.shape == ()
     assert (values == new_values).all()
     assert (action_log_probs == new_action_log_probs).all()
-    assert dist_entropy.shape == ()
 
     print("Base trainer discrete case test passed!")
     env.close()
@@ -345,10 +341,8 @@ def test_base_trainer():
     assert env.envs[0].action_space.shape[0] == actions.shape[1]
     assert values.shape == (1, 1), values.shape
     assert action_log_probs.shape == (1, 1), action_log_probs.shape
-    assert dist_entropy.shape == ()
     assert (values == new_values).all()
     assert (action_log_probs == new_action_log_probs).all()
-    assert dist_entropy.shape == ()
 
     # Input multiple observations
     values, actions, action_log_probs = trainer.compute_action(obs, deterministic=False)
@@ -356,10 +350,8 @@ def test_base_trainer():
     assert env.envs[0].action_space.shape[0] == actions.shape[1]
     assert values.shape == (3, 1), values.shape
     assert action_log_probs.shape == (3, 1), action_log_probs.shape
-    assert dist_entropy.shape == ()
     assert (values == new_values).all()
     assert (action_log_probs == new_action_log_probs).all()
-    assert dist_entropy.shape == ()
 
     print("Base trainer continuous case test passed!")
     env.close()

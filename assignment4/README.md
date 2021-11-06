@@ -5,7 +5,7 @@
 **Changelog**:
 
 ```diff
-+ Nov 6: Remove wrong assertions in BaseTrainer test. dist_entropy should be a tensor with single entry.
+- Nov 6: Remove wrong assertions in BaseTrainer test. dist_entropy should be a tensor with single entry.
 ```
 
 ---

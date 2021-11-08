@@ -5,6 +5,7 @@
 **Changelog**:
 
 ```diff
+- Nov 8: Remove TD3 in CartPole-v0 requirement.
 - Nov 6: Remove wrong assertions in BaseTrainer test. dist_entropy should be a tensor with single entry.
 ```
 

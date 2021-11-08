@@ -62,19 +62,9 @@ We require at least 10M steps to train PPO.
 We require at least 1M steps to train TD3.
 
 
-
-### TD3 in CartPole
-
-(5 points)
-
-[TODO]
-
-
-
-
 ### TD3 in MetaDrive Easy
 
-(5 points)
+(10 points)
 
 [TODO]
 

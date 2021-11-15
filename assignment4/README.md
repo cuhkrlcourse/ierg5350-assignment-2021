@@ -5,6 +5,7 @@
 **Changelog**:
 
 ```diff
++ Nov 15: Change the installation instruction on MetaDrive. Some windows user experience error if install via pip git+.
 - Nov 8: Remove TD3 in CartPole-v0 requirement.
 - Nov 6: Remove wrong assertions in BaseTrainer test. dist_entropy should be a tensor with single entry.
 ```
@@ -64,10 +65,17 @@ Before start coding, please make sure to install the following packages:
 
 These can be installed via: `pip install pandas scipy seaborn tabulate`
 
-We also need to install a lighweight driving simulator:
+We also need to install a lightweight driving simulator [MetaDrive](https://github.com/decisionforce/metadrive):
+ 
+ 
+```bash
+git clone https://github.com/decisionforce/metadrive.git
+cd metadrive
+pip install -e .
+```
 
-* [MetaDrive](https://github.com/decisionforce/metadrive)  -  via  `pip install git+https://github.com/decisionforce/metadrive.git` . Please refer to the documentation or contact us if you encounter any problem.
-
+We learned that install MetaDrive in Windows via `pip install git+https://github.com/decisionforce/metadrive.git`
+is problematic. Please use the above way to install, thanks!
 
 
 ### Notes

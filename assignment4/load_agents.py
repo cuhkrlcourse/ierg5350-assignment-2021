@@ -50,7 +50,7 @@ class PolicyAPI:
         pass
 
     def __call__(self, obs):
-        action = self.agent.compute_action(obs, True)[1]
+        action = self.agent.compute_action(obs)[1]
         action = action.detach().cpu().numpy()
         if self.num_envs == 1:
             return action[0]

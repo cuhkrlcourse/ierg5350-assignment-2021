@@ -74,10 +74,11 @@ We also need to install a lightweight driving simulator [MetaDrive](https://gith
 git clone https://github.com/decisionforce/metadrive.git
 cd metadrive
 pip install -e .
+
+# For some windows user, please install metadrive via:
+pip install --user -e .
 ```
 
-We learned that install MetaDrive in Windows via `pip install git+https://github.com/decisionforce/metadrive.git`
-is problematic. Please use the above way to install, thanks!
 
 
 ### Notes
@@ -88,6 +89,8 @@ is problematic. Please use the above way to install, thanks!
 4. If you look for computing resources, you can try out the **Google Colab**, where you can apply for free GPU resources to accelerate the learning of your RL models. Here are some resources as intro to the Colab.
 	- YouTube Video: https://www.youtube.com/watch?v=inN8seMm7UI
 	- Colab Intro: https://colab.research.google.com/notebooks/intro.ipynb (you may need to login with your google account)
+5. We learned that install MetaDrive in Windows via `pip install git+https://github.com/decisionforce/metadrive.git` is problematic. Please use the above way to install, thanks!
+
 
 
 

@@ -5,6 +5,7 @@
 **Changelog**:
 
 ```diff
++ Nov 22: Add box2d installation guide.
 + Nov 15: Change the installation instruction on MetaDrive. Some windows user experience error if install via pip git+.
 - Nov 8: Remove TD3 in CartPole-v0 requirement.
 - Nov 6: Remove wrong assertions in BaseTrainer test. dist_entropy should be a tensor with single entry.
@@ -18,8 +19,6 @@ Welcome to assignment 4 of our RL course! In this assignment, we will implement 
 Different from the previous assignment, this assignment requires you to finish codes mainly in python files instead of in a jupyter notebook. The provided jupyter notebook is only guideline and visualizing toolbox for you to test and play around those python files. 
 
 This assignment is highly flexible. You are free to do hyper-parameter searching or improve your implementation by introducing new components.
-
-
 
 
 ### The grading scheme and deliverables
@@ -58,12 +57,15 @@ We also provide many useful scripts like the `exp_search_lr.sh`. Since they are 
 ### Dependencies
 Before start coding, please make sure to install the following packages:
 
+* box2d
 * pandas
 * scipy
 * seaborn
 * tabulate
 
 These can be installed via: `pip install pandas scipy seaborn tabulate`
+
+Since we might required `BipedalWalker` environment during testing, you might also need to install box2D engine via `pip install gym[box2d]` or `pip install gym[all]`. 
 
 We also need to install a lightweight driving simulator [MetaDrive](https://github.com/decisionforce/metadrive):
  

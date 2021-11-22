@@ -91,6 +91,7 @@ You can refer to the Figure 5 of the paper of  [MetaDrive paper](https://arxiv.o
 to see the expected curves. [ProcGen paper](http://proceedings.mlr.press/v97/cobbe19a/cobbe19a.pdf) is also highly relevant.
 
 You should train PPO and TD3 agents in `MetaDrive-Tut-[1,5,10,20,50,100]Env-v0` environments and test all agents in `MetaDrive-Tut-Test-v0`. Therefore you should conduct 6 PPO experiments and 6 TD3 experiments. If you indeed can't access enough computing resource, you can omit the training in `MetaDrive-Tut-50Env-v0` and `MetaDrive-Tut-100Env-v0`.
+You can refer to the `vis_and_eval.py` script to learn how to write script to evaluate your agents.
 
 In each experiment, we will store many checkpoints. Please find the checkpoint with **best training performance** through observing training performance (since the training performance might not be increase monotonically) and test the checkpoint in the test environment. **You should implement the script to run each checkpoint in the test environment with at least 50 episodes.**
 

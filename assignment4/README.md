@@ -5,6 +5,7 @@
 **Changelog**:
 
 ```diff
++ Nov 22: Update installation guide. Update examplar evaluate script.
 + Nov 22: Add box2d installation guide.
 + Nov 15: Change the installation instruction on MetaDrive. Some windows user experience error if install via pip git+.
 - Nov 8: Remove TD3 in CartPole-v0 requirement.

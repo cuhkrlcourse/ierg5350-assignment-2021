@@ -5,6 +5,7 @@
 **Changelog**:
 
 ```diff
+- Nov 25: Remove deprecated flag --asynchronous.
 + Nov 22: Update installation guide. Update examplar evaluate script.
 + Nov 22: Add box2d installation guide.
 + Nov 15: Change the installation instruction on MetaDrive. Some windows user experience error if install via pip git+.
